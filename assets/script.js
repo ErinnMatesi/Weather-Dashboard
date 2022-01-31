@@ -7,13 +7,21 @@ var searchHistory = document.getElementById("#searchHistory");
 var getWeather;
 var getLongLat;
 var displayResults;
+var fiveDay;
 var printHistory;
+
+// pulls value from the input
+var getCity = searchInput.value.trim();
 
 getLongLat = function(city) {
     var geoAPI = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=0111ecb58971fc33b9ef27ef46d9d788";
 
     fetch(geoAPI)
     .then(function (response) {
+        // response.json().then(function (data) {
+        //     getWeather(data.lat, data.lon);
+        // })
+        console.log(response.lon);
         return response.json();
     })
     .then(function (data) {
@@ -22,7 +30,7 @@ getLongLat = function(city) {
     .catch(function (error) {
         alert("Unable to find that city");
     });
-}
+};
 
 // fetches weather info in imperial units
 getWeather = function(lat, lon) {
@@ -40,12 +48,18 @@ getWeather = function(lat, lon) {
     });
 };
 
-searchButton.addEventListener("click", function() {
-    // pulls value from the input
-    var getCity = searchInput.value.trim();
+printHistory = function() {
+    var historyItem = document.createElement("li");
+    historyItem.innerText=getCity;
+    searchHistory.appendChild(historyItem);
+};
 
+
+
+searchButton.addEventListener("click", function() {
     getLongLat(getCity);
+    printHistory();
     getWeather();
     displayResults();
-    printHistory();
+    fiveDay();
 });
