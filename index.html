@@ -24,8 +24,29 @@
             </section>
         </aside>
         <section class="results">
-            <div class="dayForecast"></div>
-            <div class="fiveDay"></div>
+            <div class="dayForecast">
+                <h3 id="forecast"></h3>
+                <p id="dayTemp"></p>
+                <p id="dayWind"></p>
+                <p id="dayHumid"></p>
+                <p id="dayUV"></p>
+            </div>
+            <!-- 5day forecast -->
+            <div class="fiveDay">
+                <div class="card day1" style="width: 18rem;">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title" id="d1Date">DATE GOES HERE</h5>
+                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" id="d1Temp">TEMP GOES HERE</li>
+                        <li class="list-group-item" id="d1Wind">WIND GOES HERE</li>
+                        <li class="list-group-item" id="d1Humid">HUMIDITY</li>
+                    </ul>
+                  </div>
+                  <!-- add days 2-5 once details are finalized -->
+            </div>
         </section>
     </main>
     

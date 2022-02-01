@@ -45,7 +45,7 @@ button {
     margin-bottom: 0.5rem;
 }
 
-.searchHistory {
+.history {
     border-top: 2px solid black;
 }
 
@@ -59,4 +59,15 @@ button {
 
 .dayForecast {
     border: 1px solid black;
+}
+
+#searchHistory li {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    background-color: var(--lightgreen);
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+    border: 0.5px solid black;
 }
