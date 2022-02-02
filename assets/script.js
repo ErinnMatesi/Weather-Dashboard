@@ -8,6 +8,7 @@ var dayTemp = document.querySelector("#dayTemp");
 var dayWind = document.querySelector("#dayWind");
 var dayHumid = document.querySelector("#dayHumid");
 var dayUV = document.querySelector("#dayUV");
+var dailyIcon = document.querySelector(".dailyIcon");
 // var temp = document.querySelector(".Temp");
 // var wind = document.querySelector(".Wind");
 // var humid = document.querySelector(".Humid");
@@ -15,12 +16,15 @@ var dayUV = document.querySelector("#dayUV");
 var timeOffset;
 
 var displayResults = function(data) {
-    // need to add weather icon to this too ^
-    // cardImg.setAttribute('src', `https://openweathermap.org/img/w/${data.weather[0].icon}.png`);
+    //  add weather icon to this too 
+    var weatherIcon = data.current.weather[0].icon;
+    dailyIcon.setAttribute("src", "https://openweathermap.org/img/w/" + weatherIcon + ".png");
+    // fill in weather details
     dayTemp.textContent = "Temp: " + data.current.temp;
     dayWind.textContent = "Wind: " + data.current.wind_speed;
     dayHumid.textContent = "Humidity: " + data.current.humidity;
     dayUV.textContent = "UV: " + data.current.uvi;
+    // set UV color
     var checkUV = function() {
         if (data.current.uvi <= 2 ) {
             dayUV.classList.add("noRisk");
@@ -39,28 +43,26 @@ var displayResults = function(data) {
     console.log("displayResults Works");
 };
 
-// set card classes/content then run it as a loop below
-// var setCardValues = function(data) {
-//     temp.textContent = "Temp: " + data.daily[i].temp.day;
-//     wind.textContent = "Wind: " + data.daily[i].wind_speed;
-//     humid.textContent = "Humidity: " + data.daily[i].humidity;
-//     date.textContent = new Date(data.current.dt*1000).toLocaleDateString();
-//     console.log("setCardValue works")
-// }
-
-
-
-var fiveDay = function(data) {
-    for (var i = 1; i < 6; i++) {
-        var findCard = "day" + i;
-        timeOffset = data.timezone_offset;
-        document.querySelector("." + findCard).children(".card-body").children(".Temp").textContent = "Temp: " + data.daily[i].temp.day;
-        document.querySelector("." + findCard).children(".card-body").children(".Humid").textContent = "Humidity: " + data.daily[i].humidity;
-        document.querySelector("." + findCard).children(".card-body").children(".Wind").textContent = "Wind: " + data.daily[1].wind_speed;
-        document.querySelector("." + findCard).children(".card-body").children(".Date").textContent = new Date((data.current.dt + timeOffset)*1000).toLocaleDateString();
-    };
-    console.log("fiveDay works")
-};
+// var fiveDay = function(data) {
+//     for (var i = 1; i < 6; i++) {
+//         var findCard = ".day" + i;
+//         var parentElement = document.querySelector(findCard);
+//         var ulChild = parentElement.querySelector(".Stats");
+//         var h5Child = parentElement.querySelector(".Date");
+//         var temp = ulChild.querySelector(".Temp");
+//         var wind = ulChild.querySelector(".Wind");
+//         var humid = ulChild.querySelector(".Humid");
+//         var date = h5Child.querySelector(".Date");
+//         timeOffset = data.timezone_offset;
+//         temp.textContent = "Temp: " + data.daily[i].temp.day;
+//         humid.textContent = "Humidity: " + data.daily[i].humidity;
+//         wind.textContent = "Wind: " + data.daily[1].wind_speed;
+//         date.textContent = new Date((data.current.dt + timeOffset)*1000).toLocaleDateString();
+//         var weatherIcon = data.daily[i].weather[0].icon;
+//         dailyIcon.setAttribute("src", "https://openweathermap.org/img/w/" + weatherIcon + ".png");
+//     };
+//     console.log("fiveDay works")
+// };
 
 var getLongLat = function(city) {
     var geoAPI = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=0111ecb58971fc33b9ef27ef46d9d788";
@@ -96,29 +98,27 @@ var getWeather = function(lat, lon) {
     })
     .then(function (data) {
         console.log(data);
-        // add weather card details here
+        
         // creating daily forecast
         displayResults(data);
-        // fiveDay(data);
-        // timeOffset = data.timezone_offset;
-        // temp.textContent = "Temp: " + data.daily[1].temp.day;
-        // wind.textContent = "Wind: " + data.daily[1].wind_speed;
-        // humid.textContent = "Humidity: " + data.daily[1].humidity;
-        // date.textContent = new Date((data.current.dt + timeOffset)*1000).toLocaleDateString();
+        // add weather card details here
         for (var i = 1; i < 6; i++) {
             var findCard = ".day" + i;
             var parentElement = document.querySelector(findCard);
             var ulChild = parentElement.querySelector(".Stats");
-            var h5Child = parentElement.querySelector(".Date");
+            var h5Child = parentElement.querySelector(".card-body");
             var temp = ulChild.querySelector(".Temp");
             var wind = ulChild.querySelector(".Wind");
             var humid = ulChild.querySelector(".Humid");
             var date = h5Child.querySelector(".Date");
+            var icon = h5Child.querySelector(".cardImg");
             timeOffset = data.timezone_offset;
             temp.textContent = "Temp: " + data.daily[i].temp.day;
             humid.textContent = "Humidity: " + data.daily[i].humidity;
             wind.textContent = "Wind: " + data.daily[1].wind_speed;
             date.textContent = new Date((data.current.dt + timeOffset)*1000).toLocaleDateString();
+            var weatherIcon = data.daily[i].weather[0].icon;
+            icon.setAttribute("src", "https://openweathermap.org/img/w/" + weatherIcon + ".png");
         };
  
     })
@@ -126,8 +126,6 @@ var getWeather = function(lat, lon) {
         alert("Unable to find that city");
     });
 };
-
-// new Date(data.current.dt*1000).toLocaleDateString()
 
 
 var printHistory = function(city) {

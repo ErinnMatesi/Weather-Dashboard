@@ -50,7 +50,7 @@ button {
 }
 
 .results {
-    width: 50vw;
+    width: 70vw;
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -73,21 +73,21 @@ button {
 }
 
 .noRisk {
-    background-color: green;
+    background-color: rgb(66, 124, 66);
 }
 
 .lowRisk {
-    background-color: yellow;
+    background-color: rgb(245, 245, 112);
 }
 
 .moderateRisk {
-    background-color: orange;
+    background-color: rgb(253, 192, 78);
 }
 
 .highRisk {
-    background-color: red;
+    background-color: rgb(252, 54, 54);
 }
 
 .vHighRisk {
-    background-color: purple;
+    background-color: rgb(129, 39, 129);
 }

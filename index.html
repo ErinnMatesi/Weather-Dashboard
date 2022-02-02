@@ -26,6 +26,7 @@
         <section class="results">
             <div class="dayForecast">
                 <h3 id="forecast"></h3>
+                <img class="dailyIcon">
                 <!-- add image and maybe as a flexbox with the h3 -->
                 <p id="dayTemp"></p>
                 <p id="dayWind"></p>
@@ -33,17 +34,66 @@
                 <p id="dayUV"></p>
             </div>
             <!-- 5day forecast -->
-            <div class="fiveDay">
-                <div class="card day1" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title Date" id="Date"></h5>
+            <div class="container fiveDay">
+                <div class="row">
+                    <div class="col col-lg-2 card day1" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title Date" id="Date"></h5>
+                            <img class="cardImg">
+                        </div>
+                        <ul class="list-group list-group-flush Stats">
+                            <li class="list-group-item Temp" id="Temp"></li>
+                            <li class="list-group-item Wind" id="Wind"></li>
+                            <li class="list-group-item Humid" id="Humid"></li>
+                        </ul>
                     </div>
-                    <ul class="list-group list-group-flush Stats">
-                        <li class="list-group-item Temp" id="Temp"></li>
-                        <li class="list-group-item Wind" id="Wind"></li>
-                        <li class="list-group-item Humid" id="Humid"></li>
-                    </ul>
+                    <div class="col col-lg-2 card day2" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title Date" id="Date"></h5>
+                            <img class="cardImg">
+                        </div>
+                        <ul class="list-group list-group-flush Stats">
+                            <li class="list-group-item Temp" id="Temp"></li>
+                            <li class="list-group-item Wind" id="Wind"></li>
+                            <li class="list-group-item Humid" id="Humid"></li>
+                        </ul>
+                    </div>
+                    <div class="col col-lg-2 card day3" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title Date" id="Date"></h5>
+                            <img class="cardImg">
+                        </div>
+                        <ul class="list-group list-group-flush Stats">
+                            <li class="list-group-item Temp" id="Temp"></li>
+                            <li class="list-group-item Wind" id="Wind"></li>
+                            <li class="list-group-item Humid" id="Humid"></li>
+                        </ul>
+                    </div>
+                    <div class="col col-lg-2 card day4" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title Date" id="Date"></h5>
+                            <img class="cardImg">
+                        </div>
+                        <ul class="list-group list-group-flush Stats">
+                            <li class="list-group-item Temp" id="Temp"></li>
+                            <li class="list-group-item Wind" id="Wind"></li>
+                            <li class="list-group-item Humid" id="Humid"></li>
+                        </ul>
+                    </div>
+                    <div class="col col-lg-2 card day5" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title Date" id="Date"></h5>
+                            <img class="cardImg">
+                        </div>
+                        <ul class="list-group list-group-flush Stats">
+                            <li class="list-group-item Temp" id="Temp"></li>
+                            <li class="list-group-item Wind" id="Wind"></li>
+                            <li class="list-group-item Humid" id="Humid"></li>
+                        </ul>
+                    </div>
+
                 </div>
+                
                   
             </div>
         </section>
