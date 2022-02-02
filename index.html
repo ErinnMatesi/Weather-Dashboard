@@ -26,6 +26,7 @@
         <section class="results">
             <div class="dayForecast">
                 <h3 id="forecast"></h3>
+                <!-- add image and maybe as a flexbox with the h3 -->
                 <p id="dayTemp"></p>
                 <p id="dayWind"></p>
                 <p id="dayHumid"></p>
@@ -34,18 +35,16 @@
             <!-- 5day forecast -->
             <div class="fiveDay">
                 <div class="card day1" style="width: 18rem;">
-                    
                     <div class="card-body">
-                        <h5 class="card-title" id="d1Date">DATE GOES HERE</h5>
-                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <h5 class="card-title Date" id="Date"></h5>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" id="d1Temp">TEMP GOES HERE</li>
-                        <li class="list-group-item" id="d1Wind">WIND GOES HERE</li>
-                        <li class="list-group-item" id="d1Humid">HUMIDITY</li>
+                    <ul class="list-group list-group-flush Stats">
+                        <li class="list-group-item Temp" id="Temp"></li>
+                        <li class="list-group-item Wind" id="Wind"></li>
+                        <li class="list-group-item Humid" id="Humid"></li>
                     </ul>
-                  </div>
-                  <!-- add days 2-5 once details are finalized -->
+                </div>
+                  
             </div>
         </section>
     </main>

@@ -71,3 +71,23 @@ button {
     text-align: center;
     border: 0.5px solid black;
 }
+
+.noRisk {
+    background-color: green;
+}
+
+.lowRisk {
+    background-color: yellow;
+}
+
+.moderateRisk {
+    background-color: orange;
+}
+
+.highRisk {
+    background-color: red;
+}
+
+.vHighRisk {
+    background-color: purple;
+}
