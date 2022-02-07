@@ -65,7 +65,7 @@ var displayResults = function(data) {
 // };
 
 var getLongLat = function(city) {
-    var geoAPI = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=0111ecb58971fc33b9ef27ef46d9d788";
+    var geoAPI = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=0111ecb58971fc33b9ef27ef46d9d788";
 
     fetch(geoAPI)
     .then(function (response) {
