@@ -8,7 +8,7 @@ UV index is color coded depending on safety level.
 - Red: high risk
 - Purple: very high risk
 
-![screenshot of webpage](./assets/Capture.png)
+![screenshot of webpage](./assets/Images/Capture.png)
 
 ## Technologies Used
 - HTML
