@@ -10,6 +10,13 @@ UV index is color coded depending on safety level.
 
 ![screenshot of webpage](./assets/Capture.png)
 
+## Technologies Used
+- HTML
+- CSS
+- Javascript
+- Bootstrap
+- jQuery
+- Moment.js
 
 ## Live Site
 https://erinnmatesi.github.io/Weather-Dashboard/
