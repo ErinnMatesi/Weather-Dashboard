@@ -9,10 +9,6 @@ var dayWind = document.querySelector("#dayWind");
 var dayHumid = document.querySelector("#dayHumid");
 var dayUV = document.querySelector("#dayUV");
 var dailyIcon = document.querySelector(".dailyIcon");
-// var temp = document.querySelector(".Temp");
-// var wind = document.querySelector(".Wind");
-// var humid = document.querySelector(".Humid");
-// var date = document.querySelector(".Date");
 var timeOffset;
 
 var displayResults = function(data) {
@@ -42,27 +38,6 @@ var displayResults = function(data) {
     checkUV();
     console.log("displayResults Works");
 };
-
-// var fiveDay = function(data) {
-//     for (var i = 1; i < 6; i++) {
-//         var findCard = ".day" + i;
-//         var parentElement = document.querySelector(findCard);
-//         var ulChild = parentElement.querySelector(".Stats");
-//         var h5Child = parentElement.querySelector(".Date");
-//         var temp = ulChild.querySelector(".Temp");
-//         var wind = ulChild.querySelector(".Wind");
-//         var humid = ulChild.querySelector(".Humid");
-//         var date = h5Child.querySelector(".Date");
-//         timeOffset = data.timezone_offset;
-//         temp.textContent = "Temp: " + data.daily[i].temp.day;
-//         humid.textContent = "Humidity: " + data.daily[i].humidity;
-//         wind.textContent = "Wind: " + data.daily[1].wind_speed;
-//         date.textContent = new Date((data.current.dt + timeOffset)*1000).toLocaleDateString();
-//         var weatherIcon = data.daily[i].weather[0].icon;
-//         dailyIcon.setAttribute("src", "https://openweathermap.org/img/w/" + weatherIcon + ".png");
-//     };
-//     console.log("fiveDay works")
-// };
 
 var getLongLat = function(city) {
     var geoAPI = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&appid=0111ecb58971fc33b9ef27ef46d9d788";
