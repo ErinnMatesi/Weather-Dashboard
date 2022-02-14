@@ -90,8 +90,8 @@ var getWeather = function(lat, lon) {
             timeOffset = data.timezone_offset;
             temp.textContent = "Temp: " + data.daily[i].temp.day;
             humid.textContent = "Humidity: " + data.daily[i].humidity;
-            wind.textContent = "Wind: " + data.daily[1].wind_speed;
-            date.textContent = new Date((data.current.dt + timeOffset)*1000).toLocaleDateString();
+            wind.textContent = "Wind: " + data.daily[i].wind_speed;
+            date.textContent = new Date((data.daily[i].dt + timeOffset)*1000).toLocaleDateString();
             var weatherIcon = data.daily[i].weather[0].icon;
             icon.setAttribute("src", "https://openweathermap.org/img/w/" + weatherIcon + ".png");
         };
