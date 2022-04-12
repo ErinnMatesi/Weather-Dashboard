@@ -12,7 +12,7 @@ h1 {
     background: linear-gradient(0.25turn, var(--teal), var(--lightgreen), var(--orange));
     text-align: center;
     font-size: 200%;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 main {
