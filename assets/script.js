@@ -33,10 +33,8 @@ var displayResults = function(data) {
         } else {
             dayUV.classList.add("vHighRisk");
         }
-        console.log("checkUV works")
     };
     checkUV();
-    console.log("displayResults Works");
 };
 
 var getLongLat = function(city) {
